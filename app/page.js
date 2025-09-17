@@ -1,14 +1,53 @@
+"use client";
 import Link from "next/link";
+import styles from "./page.module.css";
+import ImageSlideshow from "@/components/images/image-slideshow";
 
 export default function Home() {
   return (
+    <>
+    <header className={styles.header}>
+      <div className={styles.slideshow}>
+        <ImageSlideshow />
+      </div>
+      <div>
+        <div className={styles.hero}>
+          <h1>NextLevel Food</h1>
+          <p>Delicious meals, shared by a food-loving community.</p>
+        </div>
+        <div className={styles.cta}>
+          <Link href="/meals">Browse Meals</Link>
+          <Link href="/community">Join The Community</Link>
+        </div>
+      </div>
+    </header>
     <main>
-      <h1 style={{ color: 'white', textAlign: 'center' }}>
-        Time to get started!
-      </h1>
-      <h1><Link href="/meals">Meals</Link></h1>
-      <h1><Link href="/meals/share">Share Meal</Link></h1>
-      <h1><Link href="/community">Community</Link></h1>
+      <section className={styles.section}>
+        <h2>How it works</h2>
+          <p>
+            NextLevel Food is a platform for foodies to share their favorite
+            recipes with the world. It&apos;s a place to discover new dishes, and to
+            connect with other food lovers.
+          </p>
+          <p>
+            NextLevel Food is a place to discover new dishes, and to connect
+            with other food lovers.
+          </p>
+      </section>
+
+      <section className={styles.section}>
+        <h2>Why NextLevel Food?</h2>
+          <p>
+            NextLevel Food is a platform for foodies to share their favorite
+            recipes with the world. It&apos;s a place to discover new dishes, and to
+            connect with other food lovers.
+          </p>
+          <p>
+            NextLevel Food is a place to discover new dishes, and to connect
+            with other food lovers.
+          </p>
+      </section>
     </main>
+    </>
   );
 }
